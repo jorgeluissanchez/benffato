@@ -1,0 +1,84 @@
+<ion-content [fullscreen]="true">
+  <app-navbar
+    [leftIcon]="'../../../assets/icons/arrow-left-icon.svg'"
+    [leftLink]="'/order'"
+    [rightIcon]="'../../../assets/icons/close-icon.svg'"
+    [rightLink]="'/'"
+  ></app-navbar>
+
+  <!-- Grilla de productos -->
+  <main class="px-4">
+    <!-- Sección de resumen de pedido -->
+    <app-section [title]="'Mi Pedido'">
+      <div class="flex justify-between">
+        <p class="text-base">Subtotal:</p>
+        <p class="text-base font-bold">$100.00</p>
+      </div>
+      <div class="flex justify-between mt-2">
+        <p class="text-base">Valor del Domicilio:</p>
+        <p class="text-base font-bold">$10.00</p>
+      </div>
+      <div class="flex justify-between mt-2 border-t pt-2">
+        <p class="text-base">Total a Pagar:</p>
+        <p class="text-base font-bold">$110.00</p>
+      </div>
+    </app-section>
+    <!-- Sección de métodos de pago -->
+    <app-section [title]="'Método de Pago'">
+      <div class="flex items-center justify-between p-4 border-b-2">
+        <div class="flex">
+          <img
+            src="../../../assets/icons/efectivo-icon.svg"
+            alt="Efectivo"
+            class="h-6 w-6 mr-2"
+          />
+          <label for="tarjeta" class="text-base flex-1">Efetivo</label>
+        </div>
+        <input type="radio" id="tarjeta" name="metodoPago" class="h-6 w-6" />
+      </div>
+      <div class="flex items-center justify-between p-4">
+        <div class="flex">
+          <img
+            src="../../../assets/icons/banco-icon.svg"
+            alt="Banco"
+            class="h-6 w-6 mr-2"
+          />
+          <label for="paypal" class="text-base flex-1"
+            >Transferencia Bancaria o Nequi</label
+          >
+        </div>
+        <input type="radio" id="paypal" name="metodoPago" class="h-6 w-6" />
+      </div>
+    </app-section>
+    <!-- Sección de Datos de Contacto -->
+    <app-section [title]="'Datos de Contacto'">
+      <app-text-input
+        [placeholder]="'Ingresa tus nombres y apellidos'"
+      ></app-text-input>
+      <app-text-input
+        [placeholder]="'Ingresa tu número de teléfono'"
+      ></app-text-input>
+      <app-text-input
+        [placeholder]="'Ingresa tu dirección y barrio'"
+      ></app-text-input>
+
+      <div class="flex items-center mb-4">
+        <input
+          type="checkbox"
+          id="guardarDatos"
+          name="guardarDatos"
+          class="h-7 w-7 rounded border-blue-500 focus:outline-none focus:ring focus:border-blue-500"
+        />
+        <label for="guardarDatos" class="text-sm text-gray-500 ml-2"
+          >Desearia guardar mis datos para futuras compras</label
+        >
+      </div>
+    </app-section>
+
+    <button
+      class="bg-green-500 my-4 py-3 rounded-full text-white text-center w-full"
+    >
+      Realizar Pedido
+    </button>
+  </main>
+</ion-content>

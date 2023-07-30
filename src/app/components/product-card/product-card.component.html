@@ -1,0 +1,44 @@
+<div class="bg-white rounded-lg shadow-md px-4 py-2 flex hover:shadow-lg transition-shadow cursor-pointer">
+  <img src="../../../assets/images/pan.jpg" alt="Imagen del producto" class="w-20 h-20 object-cover rounded-lg my-auto">
+  <div class="ml-4 flex flex-col justify-between w-full">
+    <div>
+      <ng-container *ngIf="cancelOrder">
+        <div class="flex items-center justify-between mt-1">
+        <h3 class="text-sm font-semibold">{{ product.title }}</h3>
+        <div class="flex items-center" (click)="cancelOrder(product)">
+          <img src="../../../assets/icons/close-icon.svg" alt="close icon" class="h-5">
+        </div>
+      </div>
+      </ng-container>
+
+      <ng-container *ngIf="!cancelOrder">
+        <h3 class="text-sm font-semibold">{{ product.title }}</h3>
+      </ng-container>
+
+      <p class="text-gray-600 text-xs">{{ product.subtitle }}</p>
+
+      <ng-container *ngIf="product.description">
+        <p class="text-gray-500 text-xs mt-1 line-clamp-2">{{ product.description }}</p>
+      </ng-container>
+
+    </div>
+      <div class="flex items-center justify-between mt-1">
+          <p class="text-sm font-bold">${{ product.price }} COP</p>
+          <ng-container *ngIf="product.shopIcon">
+            <img src="../../../assets/icons/tienda-icon.svg" alt="Tienda" class="h-6 w-6">
+          </ng-container>
+          <ng-container  *ngIf="!product.shopIcon">
+            <div class="flex items-center">
+            <button class="bg-black text-white h-5 w-5 flex items-center justify-center rounded-sm" (click)="decrement(product)">
+                -
+            </button>
+            <p class="px-2 text-sm font-semibold">{{ product.quantity }}</p>
+            <button class="bg-black text-white h-5 w-5 flex items-center justify-center rounded-sm" (click)="increment(product)">
+                +
+            </button>
+          </div>
+
+          </ng-container>
+      </div>
+  </div>
+</div>

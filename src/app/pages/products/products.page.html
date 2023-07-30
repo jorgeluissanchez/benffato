@@ -1,0 +1,52 @@
+<ion-content>
+  <app-navbar
+    [rightIcon]="'../../../assets/icons/cart-icon.svg'"
+    [rightLink]="'/order'"
+  ></app-navbar>
+
+  <!-- Sección con el input de búsqueda -->
+  <section class="bg-white py-2 px-4">
+    <app-search></app-search>
+  </section>
+  <!-- Sección con la lista de chips -->
+  <section class="bg-white p-4 chip-container">
+    <app-chip-list></app-chip-list>
+  </section>
+  <!-- Grilla de productos -->
+  <section
+    class="bg-white p-4 grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+  >
+    <!-- Producto 1 -->
+    <app-product-card
+      [product]="product"
+      *ngFor="let product of products"
+    ></app-product-card>
+
+    <div
+      class="bg-white rounded-lg shadow-md px-4 py-2 flex hover:shadow-lg transition-shadow cursor-pointer"
+    >
+      <img
+        src="../../../assets/images/pan.jpg"
+        alt="Imagen del producto"
+        class="w-20 h-20 object-cover rounded-lg my-auto"
+      />
+      <div class="ml-4 flex flex-col justify-between w-full">
+        <div>
+          <h3 class="text-sm font-semibold">Título del Producto</h3>
+          <p class="text-gray-600 text-xs">Subtítulo del Producto</p>
+          <p class="text-gray-500 text-xs mt-1 line-clamp-3">
+            Descripción del Producto con más de 100 caracteres...
+          </p>
+        </div>
+        <div class="flex items-center justify-between mt-1">
+          <p class="text-sm font-bold">$99.99 COP</p>
+          <img
+            src="../../../assets/icons/tienda-icon.svg"
+            alt="Tienda"
+            class="h-6 w-6"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>

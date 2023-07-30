@@ -1,0 +1,49 @@
+<ion-content>
+  <app-navbar
+    [rightIcon]="'../../../assets/icons/close-icon.svg'"
+    [rightLink]="'/'"
+  ></app-navbar>
+
+  <!-- Grilla de productos -->
+  <main class="px-4">
+    <app-section [title]="'Mi Pedido'">
+      <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <app-product-card
+          [product]="order"
+          [cancelOrder]="cancelOrder"
+          [increment]="increment"
+          [decrement]="decrement"
+          *ngFor="let order of orders"
+        ></app-product-card>
+      </div>
+    </app-section>
+
+    <!-- Sección para dar una opinión -->
+    <app-section [title]="'Dar una observación'">
+      <app-text-area [placeholder]="'Escribe una observación'"></app-text-area>
+    </app-section>
+
+    <!-- Sección de resumen de pedido -->
+    <app-section [title]="'Resumen del Pedido'">
+      <div class="flex justify-between">
+        <p class="text-base">Subtotal:</p>
+        <p class="text-base font-bold">$100.00</p>
+      </div>
+      <div class="flex justify-between mt-2">
+        <p class="text-base">Valor del Domicilio:</p>
+        <p class="text-base font-bold">$10.00</p>
+      </div>
+      <div class="flex justify-between mt-2 border-t pt-2">
+        <p class="text-base">Total a Pagar:</p>
+        <p class="text-base font-bold">$110.00</p>
+      </div>
+    </app-section>
+
+    <button
+      class="bg-green-500 mb-4 py-3 rounded-full text-white text-center w-full"
+      [routerLink]="'/confirmation'"
+    >
+      Confirmar Pedido
+    </button>
+  </main>
+</ion-content>

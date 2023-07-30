@@ -1,0 +1,6 @@
+<li
+  [class]="'py-1 px-5 rounded-md cursor-pointer transition-colors' + (chipInfo.selected ? ' bg-blue-500 text-white' : ' bg-gray-300 text-gray-700')"
+  (click)="selectChip(chipInfo)"
+>
+  {{ chipInfo.name }}
+</li>

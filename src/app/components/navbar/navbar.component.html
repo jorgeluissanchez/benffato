@@ -1,0 +1,17 @@
+<nav class="bg-white py-4 px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex items-center justify-between">
+  <ng-container *ngIf="leftIcon && leftLink">
+      <a [routerLink]="leftLink" class="flex-none">
+        <ion-img [src]="leftIcon" alt="left icon" class="h-4 ml-4"></ion-img>
+      </a>
+  </ng-container>
+  <!-- Logo -->
+  <div class="flex-1 text-center">
+    <!-- Always use the same logo -->
+    <ion-img src="../../../assets/icons/logo.svg" alt="Logo de la app" class="h-[4rem] mx-auto"></ion-img>
+  </div>
+  <ng-container *ngIf="rightIcon && rightLink">
+      <a [routerLink]="rightLink"  class="flex-none">
+        <ion-img [src]="rightIcon" alt="right icon" class="h-7 mr-4"></ion-img>
+      </a>
+  </ng-container>
+</nav>

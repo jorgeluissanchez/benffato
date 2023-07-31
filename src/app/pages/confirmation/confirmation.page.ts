@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmationPage implements OnInit {
 
+  delivery: number = 30;
+  subtotal: number = 100;
   constructor() { }
 
   ngOnInit() {

@@ -13,6 +13,9 @@ export class OrderPage  {
     {id: 4, title: 'Título del Producto', subtitle: 'Subtítulo del Producto', price: 99.99, quantity: 1},
   ];
 
+  delivery: number = 30;
+  subtotal: number = 100;
+
   cancelOrder(product: any) {
     console.log('cancelOrder', product);
   }

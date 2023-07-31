@@ -7,7 +7,7 @@ import { Input } from '@angular/core';
 })
 export class ProductCardComponent  {
   @Input() product: any | undefined;
-  @Input() cancelOrder: (product: any) => void = () => {};
+  @Input() cancelOrder: ((product: any) => void) | undefined;
   @Input() increment: (product: any) => void = () => {};
   @Input() decrement: (product: any) => void = () => {};
 }

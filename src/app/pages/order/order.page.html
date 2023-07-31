@@ -25,25 +25,8 @@
 
     <!-- Sección de resumen de pedido -->
     <app-section [title]="'Resumen del Pedido'">
-      <div class="flex justify-between">
-        <p class="text-base">Subtotal:</p>
-        <p class="text-base font-bold">$100.00</p>
-      </div>
-      <div class="flex justify-between mt-2">
-        <p class="text-base">Valor del Domicilio:</p>
-        <p class="text-base font-bold">$10.00</p>
-      </div>
-      <div class="flex justify-between mt-2 border-t pt-2">
-        <p class="text-base">Total a Pagar:</p>
-        <p class="text-base font-bold">$110.00</p>
-      </div>
+      <app-order-info [subtotal]="subtotal" [delivery]="delivery"></app-order-info>
     </app-section>
-
-    <button
-      class="bg-green-500 mb-4 py-3 rounded-full text-white text-center w-full"
-      [routerLink]="'/confirmation'"
-    >
-      Confirmar Pedido
-    </button>
+    <app-button [text]="'Confirmar Pedido'" [link]="'/confirmation'"></app-button>
   </main>
 </ion-content>

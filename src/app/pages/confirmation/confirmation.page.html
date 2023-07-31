@@ -10,18 +10,7 @@
   <main class="px-4">
     <!-- Sección de resumen de pedido -->
     <app-section [title]="'Mi Pedido'">
-      <div class="flex justify-between">
-        <p class="text-base">Subtotal:</p>
-        <p class="text-base font-bold">$100.00</p>
-      </div>
-      <div class="flex justify-between mt-2">
-        <p class="text-base">Valor del Domicilio:</p>
-        <p class="text-base font-bold">$10.00</p>
-      </div>
-      <div class="flex justify-between mt-2 border-t pt-2">
-        <p class="text-base">Total a Pagar:</p>
-        <p class="text-base font-bold">$110.00</p>
-      </div>
+      <app-order-info [subtotal]="subtotal" [delivery]="delivery"></app-order-info>
     </app-section>
     <!-- Sección de métodos de pago -->
     <app-section [title]="'Método de Pago'">
@@ -74,11 +63,6 @@
         >
       </div>
     </app-section>
-
-    <button
-      class="bg-green-500 my-4 py-3 rounded-full text-white text-center w-full"
-    >
-      Realizar Pedido
-    </button>
+    <app-button [text]="'Realizar Pedido'" [link]="''"></app-button>
   </main>
 </ion-content>
